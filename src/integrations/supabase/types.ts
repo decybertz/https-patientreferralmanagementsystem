@@ -93,6 +93,53 @@ export type Database = {
         }
         Relationships: []
       }
+      patient_followups: {
+        Row: {
+          completed_at: string | null
+          created_at: string | null
+          created_by: string | null
+          followup_type: string
+          id: string
+          notes: string | null
+          outcome_status: string | null
+          referral_id: string
+          satisfaction_rating: number | null
+          scheduled_date: string
+        }
+        Insert: {
+          completed_at?: string | null
+          created_at?: string | null
+          created_by?: string | null
+          followup_type: string
+          id?: string
+          notes?: string | null
+          outcome_status?: string | null
+          referral_id: string
+          satisfaction_rating?: number | null
+          scheduled_date: string
+        }
+        Update: {
+          completed_at?: string | null
+          created_at?: string | null
+          created_by?: string | null
+          followup_type?: string
+          id?: string
+          notes?: string | null
+          outcome_status?: string | null
+          referral_id?: string
+          satisfaction_rating?: number | null
+          scheduled_date?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "patient_followups_referral_id_fkey"
+            columns: ["referral_id"]
+            isOneToOne: false
+            referencedRelation: "referrals"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           availability_status: string | null
@@ -294,6 +341,45 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      referral_templates: {
+        Row: {
+          category: string
+          created_at: string | null
+          created_by: string | null
+          default_urgency: Database["public"]["Enums"]["urgency_level"] | null
+          id: string
+          is_system: boolean | null
+          medical_summary_template: string | null
+          name: string
+          reason_template: string | null
+          specialty: string | null
+        }
+        Insert: {
+          category: string
+          created_at?: string | null
+          created_by?: string | null
+          default_urgency?: Database["public"]["Enums"]["urgency_level"] | null
+          id?: string
+          is_system?: boolean | null
+          medical_summary_template?: string | null
+          name: string
+          reason_template?: string | null
+          specialty?: string | null
+        }
+        Update: {
+          category?: string
+          created_at?: string | null
+          created_by?: string | null
+          default_urgency?: Database["public"]["Enums"]["urgency_level"] | null
+          id?: string
+          is_system?: boolean | null
+          medical_summary_template?: string | null
+          name?: string
+          reason_template?: string | null
+          specialty?: string | null
+        }
+        Relationships: []
       }
       referrals: {
         Row: {
