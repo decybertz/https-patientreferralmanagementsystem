@@ -18,6 +18,8 @@ import CodeLookup from "./pages/CodeLookup";
 import AdminDashboard from "./pages/AdminDashboard";
 import Analytics from "./pages/Analytics";
 import DoctorDirectory from "./pages/DoctorDirectory";
+import ReferralTemplates from "./pages/ReferralTemplates";
+import PatientFollowups from "./pages/PatientFollowups";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -103,6 +105,22 @@ const App = () => (
               element={
                 <ProtectedRoute>
                   <DoctorDirectory />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/templates"
+              element={
+                <ProtectedRoute>
+                  <ReferralTemplates />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/followups"
+              element={
+                <ProtectedRoute>
+                  <PatientFollowups />
                 </ProtectedRoute>
               }
             />
