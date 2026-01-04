@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { useReferrals } from '@/hooks/useReferrals';
 import { useHospitals } from '@/hooks/useHospitals';
+import { useReferralTemplates, ReferralTemplate } from '@/hooks/useReferralTemplates';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -12,7 +13,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { toast } from 'sonner';
-import { ArrowLeft, Send, AlertTriangle, Clock, CheckCircle, Loader2 } from 'lucide-react';
+import { ArrowLeft, Send, AlertTriangle, Clock, CheckCircle, Loader2, FileText } from 'lucide-react';
 
 type UrgencyLevel = 'emergency' | 'urgent' | 'routine';
 
@@ -20,7 +21,9 @@ const CreateReferral = () => {
   const { currentUser } = useAuth();
   const { addReferral } = useReferrals();
   const { hospitals, loading: hospitalsLoading } = useHospitals();
+  const { templates, loading: templatesLoading } = useReferralTemplates();
   const navigate = useNavigate();
+  const [selectedTemplateId, setSelectedTemplateId] = useState<string>('');
 
   const [formData, setFormData] = useState({
     patientName: '',
@@ -38,6 +41,25 @@ const CreateReferral = () => {
   if (!currentUser) return null;
 
   const availableHospitals = hospitals.filter(h => h.id !== currentUser.hospital_id);
+
+  const handleTemplateSelect = (templateId: string) => {
+    setSelectedTemplateId(templateId);
+    
+    if (templateId === 'none') {
+      return;
+    }
+    
+    const template = templates.find(t => t.id === templateId);
+    if (template) {
+      setFormData(prev => ({
+        ...prev,
+        medicalSummary: template.medical_summary_template || prev.medicalSummary,
+        reasonForReferral: template.reason_template || prev.reasonForReferral,
+        urgency: template.default_urgency || prev.urgency,
+      }));
+      toast.success(`Template "${template.name}" applied`);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -94,12 +116,50 @@ const CreateReferral = () => {
               Create New Referral
             </CardTitle>
             <CardDescription>
-              Send a patient referral to another hospital. All fields are required.
+              Send a patient referral to another hospital. Use a template to auto-fill common information.
             </CardDescription>
           </CardHeader>
 
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Template Selection */}
+              <div className="space-y-4">
+                <h3 className="font-semibold text-foreground border-b border-border pb-2 flex items-center gap-2">
+                  <FileText className="w-4 h-4 text-primary" />
+                  Quick Start with Template
+                </h3>
+                
+                <div className="space-y-2">
+                  <Label>Select a Template (Optional)</Label>
+                  <Select
+                    value={selectedTemplateId}
+                    onValueChange={handleTemplateSelect}
+                    disabled={templatesLoading}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder={templatesLoading ? "Loading templates..." : "Choose a template to auto-fill"} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="none">No template</SelectItem>
+                      {templates.map((template) => (
+                        <SelectItem key={template.id} value={template.id}>
+                          <div className="flex items-center gap-2">
+                            <span>{template.name}</span>
+                            <span className="text-xs text-muted-foreground">({template.category})</span>
+                            {template.is_system && (
+                              <span className="text-xs bg-primary/10 text-primary px-1.5 py-0.5 rounded">System</span>
+                            )}
+                          </div>
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <p className="text-xs text-muted-foreground">
+                    Templates auto-fill medical summary, reason, and urgency level
+                  </p>
+                </div>
+              </div>
+
               {/* Patient Information */}
               <div className="space-y-4">
                 <h3 className="font-semibold text-foreground border-b border-border pb-2">
