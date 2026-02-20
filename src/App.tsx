@@ -24,6 +24,7 @@ import PatientFollowups from "./pages/PatientFollowups";
 import Messages from "./pages/Messages";
 import ProfileSettings from "./pages/ProfileSettings";
 import NotFound from "./pages/NotFound";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/about" element={<About />} />
             <Route
               path="/dashboard"
               element={

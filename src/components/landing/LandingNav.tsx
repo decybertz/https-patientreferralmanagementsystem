@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Building2, Menu, X } from "lucide-react";
 import { useState } from "react";
@@ -7,16 +7,22 @@ import { motion, AnimatePresence } from "framer-motion";
 const LandingNav = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const links = [
+  const navigate = useNavigate();
+
+  const links: { label: string; href: string; isRoute?: boolean }[] = [
     { label: "Features", href: "#features" },
     { label: "How It Works", href: "#how-it-works" },
-    { label: "About", href: "#cta" },
+    { label: "About", href: "/about", isRoute: true },
   ];
 
-  const scrollTo = (id: string) => {
+  const handleClick = (l: { href: string; isRoute?: boolean }) => {
     setMobileOpen(false);
-    const el = document.querySelector(id);
-    el?.scrollIntoView({ behavior: "smooth" });
+    if (l.isRoute) {
+      navigate(l.href);
+    } else {
+      const el = document.querySelector(l.href);
+      el?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -34,7 +40,7 @@ const LandingNav = () => {
           {links.map((l) => (
             <button
               key={l.href}
-              onClick={() => scrollTo(l.href)}
+              onClick={() => handleClick(l)}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               {l.label}
@@ -75,7 +81,7 @@ const LandingNav = () => {
               {links.map((l) => (
                 <button
                   key={l.href}
-                  onClick={() => scrollTo(l.href)}
+                  onClick={() => handleClick(l)}
                   className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors text-left py-2"
                 >
                   {l.label}
