@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const CTASection = () => {
   return (
-    <section className="py-20 md:py-28 relative overflow-hidden">
+    <section id="cta" className="py-20 md:py-28 relative overflow-hidden">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]" />
