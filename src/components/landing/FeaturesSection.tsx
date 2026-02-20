@@ -61,7 +61,7 @@ const cardVariants = {
 
 const FeaturesSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-muted/30 relative overflow-hidden">
+    <section id="features" className="py-20 md:py-28 bg-muted/30 relative overflow-hidden">
       {/* Decorative blurred circles */}
       <div className="absolute -top-32 -right-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
