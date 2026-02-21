@@ -109,7 +109,7 @@ const Login = () => {
           <div className="w-16 h-16 rounded-2xl bg-primary mx-auto flex items-center justify-center shadow-lg">
             <Building2 className="w-8 h-8 text-primary-foreground" />
           </div>
-          <h1 className="text-3xl font-bold text-foreground">MedRefer</h1>
+          <h1 className="text-3xl font-bold text-foreground">Hospital Flow</h1>
           <p className="text-muted-foreground">Hospital-to-Hospital Medical Referral System</p>
         </div>
 

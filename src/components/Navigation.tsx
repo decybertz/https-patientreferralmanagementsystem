@@ -68,7 +68,7 @@ const Navigation = () => {
                 <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
                   <Building2 className="w-5 h-5 text-primary-foreground" />
                 </div>
-                <span className="font-semibold text-lg text-foreground">MedRefer</span>
+                <span className="font-semibold text-lg text-foreground">Hospital Flow</span>
               </Link>
             </div>
 

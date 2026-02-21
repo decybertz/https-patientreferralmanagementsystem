@@ -171,7 +171,7 @@ const About = () => {
               <span className="text-sm font-semibold">Concept Note</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight tracking-tight">
-              About <span className="text-primary">MedRefer</span>
+              About <span className="text-primary">Hospital Flow</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               A comprehensive Hospital-to-Hospital Patient Referral Management System designed to digitize, 
@@ -202,14 +202,14 @@ const About = () => {
         </div>
       </section>
 
-      {/* Solution / What MedRefer Does */}
+      {/* Solution / What Hospital Flow Does */}
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
           <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Solution</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              MedRefer is a web-based platform that replaces fragmented, manual referral workflows with a 
-              unified digital system connecting hospitals, doctors, and patients.
+               Hospital Flow is a web-based platform that replaces fragmented, manual referral workflows with a 
+               unified digital system connecting hospitals, doctors, and patients.
             </p>
           </motion.div>
 
@@ -300,7 +300,7 @@ const About = () => {
           <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Future Advancements</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              The roadmap for evolving MedRefer into a world-class healthcare referral ecosystem.
+              The roadmap for evolving Hospital Flow into a world-class healthcare referral ecosystem.
             </p>
           </motion.div>
 
@@ -328,7 +328,7 @@ const About = () => {
           <motion.div {...fadeUp} transition={{ duration: 0.6 }}>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Ready to Transform Referrals?</h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
-              Join MedRefer and experience a modern, efficient, and secure patient referral system.
+              Join Hospital Flow and experience a modern, efficient, and secure patient referral system.
             </p>
             <div className="flex justify-center gap-4">
               <Button asChild size="lg">
@@ -347,7 +347,7 @@ const About = () => {
 
       <footer className="py-8 border-t border-border bg-card">
         <div className="container mx-auto px-4 text-center text-muted-foreground text-sm">
-          <p>© {new Date().getFullYear()} MedRefer. Hospital Referral Management System.</p>
+          <p>© {new Date().getFullYear()} Hospital Flow. Hospital Referral Management System.</p>
         </div>
       </footer>
     </div>

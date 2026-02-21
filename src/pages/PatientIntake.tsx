@@ -132,7 +132,7 @@ const PatientIntake = () => {
               <Building2 className="w-6 h-6" />
             </div>
             <div>
-              <h1 className="text-xl font-bold">MedRefer</h1>
+              <h1 className="text-xl font-bold">Hospital Flow</h1>
               <p className="text-xs opacity-80">Patient Check-In Kiosk</p>
             </div>
           </Link>
