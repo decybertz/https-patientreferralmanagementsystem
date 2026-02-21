@@ -54,7 +54,7 @@ const AIChatInterface = ({
             <Bot className="w-4 h-4 text-primary-foreground" />
           </div>
           <div>
-            <p className="text-sm font-medium">MedRefer Assistant</p>
+            <p className="text-sm font-medium">Hospital Flow Assistant</p>
             <p className="text-xs text-muted-foreground">AI-powered help</p>
           </div>
         </div>

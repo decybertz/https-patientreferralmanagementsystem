@@ -44,7 +44,7 @@ export const TwoFactorSetup = ({ open, onOpenChange, onComplete }: TwoFactorSetu
     try {
       const { data, error } = await supabase.auth.mfa.enroll({
         factorType: 'totp',
-        friendlyName: 'MedRefer Authenticator',
+        friendlyName: 'Hospital Flow Authenticator',
       });
 
       if (error) throw error;

@@ -192,7 +192,7 @@ const ReferralDetail = () => {
         <div class="header">
           <div>
             <h1>Medical Referral Document</h1>
-            <p class="subtitle">MedRefer - Hospital Referral System</p>
+            <p class="subtitle">Hospital Flow - Hospital Referral System</p>
           </div>
           <div class="ids">
             <p>Referral ID</p>
@@ -264,7 +264,7 @@ const ReferralDetail = () => {
         </section>
 
         <footer>
-          <p>This document was generated from MedRefer on ${format(new Date(), 'MMMM d, yyyy h:mm a')}</p>
+          <p>This document was generated from Hospital Flow on ${format(new Date(), 'MMMM d, yyyy h:mm a')}</p>
           <p style="margin-top: 4px;">This is an official medical referral document. Please handle with confidentiality.</p>
         </footer>
       </body>

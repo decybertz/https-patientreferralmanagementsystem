@@ -79,7 +79,7 @@ const FeaturesSection = () => {
             Everything You Need
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            MedRefer provides all the tools healthcare providers need to manage patient referrals efficiently.
+            Hospital Flow provides all the tools healthcare providers need to manage patient referrals efficiently.
           </p>
         </motion.div>
 

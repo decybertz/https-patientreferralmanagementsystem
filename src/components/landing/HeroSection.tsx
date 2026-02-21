@@ -33,7 +33,7 @@ const HeroSection = () => {
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-[1.1] tracking-tight"
           >
             Streamline Medical Referrals with{" "}
-            <span className="text-gradient">MedRefer</span>
+            <span className="text-gradient">Hospital Flow</span>
           </motion.h1>
 
           <motion.p

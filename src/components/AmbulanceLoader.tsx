@@ -14,7 +14,7 @@ const AmbulanceLoader = () => {
     <div className="min-h-screen bg-gradient-to-br from-primary/10 via-background to-secondary/20 flex flex-col items-center justify-center overflow-hidden">
       <div className="text-center mb-8 animate-fade-in">
         <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
-          Med<span className="text-primary">Refer</span>
+          Hospital<span className="text-primary"> Flow</span>
         </h1>
         <p className="text-muted-foreground text-lg">Connecting Healthcare, Saving Lives</p>
       </div>

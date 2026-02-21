@@ -22,7 +22,7 @@ const CTASection = () => {
             Ready to Get Started?
           </h2>
           <p className="text-muted-foreground mb-10 text-lg max-w-xl mx-auto">
-            Join the network of healthcare providers using MedRefer to streamline patient referrals.
+            Join the network of healthcare providers using Hospital Flow to streamline patient referrals.
           </p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

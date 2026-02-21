@@ -28,7 +28,7 @@ const Landing = () => {
 
       <footer className="py-8 border-t border-border bg-card">
         <div className="container mx-auto px-4 text-center text-muted-foreground text-sm">
-          <p>© {new Date().getFullYear()} MedRefer. Hospital Referral Management System.</p>
+          <p>© {new Date().getFullYear()} Hospital Flow. Hospital Referral Management System.</p>
         </div>
       </footer>
     </div>

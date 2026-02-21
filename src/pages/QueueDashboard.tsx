@@ -67,7 +67,7 @@ const QueueDashboard = () => {
               <Building2 className="w-5 h-5" />
             </div>
             <div>
-              <h1 className="text-lg font-bold">MedRefer Queue</h1>
+              <h1 className="text-lg font-bold">Hospital Flow Queue</h1>
               <p className="text-xs opacity-80">Hospital Dashboard</p>
             </div>
           </Link>
